@@ -34,7 +34,7 @@
       <section class="items">
         <div class="items__item item">
           <div class="item__top">
-            <a href="/user-feed.html" class="item__head">
+            <a href="/users/{{ post.poster_name }}" class="item__head">
               <div class="item__ava-wrap">
                 <img src="{{ post.poster_avatar }}" alt="" class="item__ava" width="47">
               </div>
@@ -44,7 +44,7 @@
           <a href="/posts/{{ post.pk }}" class="item__post-link">
             <img src="{{ post.pic }}" alt="" width="348" class="item__post-img">
           </a>
-          <p class="item__descr"><a href="/tag/{{tagname }}" class="item__tag">#{{ search_by }}</a> {{ post.content }}</p>
+          <p class="item__descr"><a href="/tag/{{ tagname }}" class="item__tag">#{{ search_by }}</a> {{ post.content }}</p>
           <div class="item__post-info">
             <div class="item__counter">
               <img src="/static/img/eye.png" alt="" class="item__counter-icon" width="26">
@@ -53,8 +53,8 @@
           </div>
           <div class="item__post-bottom">
             <a href="/posts/{{ post.pk }}" class="item__btn-more">Подробнее</a>
-            <button type="button" class="item__bookmark-btn">
-              <img src="img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
+            <a href="/bookmarks/add/{{ post.pk }}" class="item__bookmark-btn">
+              <img src="static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
             </button>
           </div>
         </div>
